@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Drawing App</title>
+    
+</head>
+<body>
+    
+    <h1 style="color: rgb(32, 7, 101);"><i>Draw Below</i></Canvas></h1>
+    <div class="canvas-container">
+        <canvas id="canvas" width="980" height="600"></canvas>
+    </div>
+    
+    <div class="controls-row">
+        <div class="tool-section">
+            <button id="brush" class="active">✏️ Brush</button>
+            <button id="rectangle">⬜ Rectangle</button>
+            <button id="circle">🔵 Circle</button>
+            <button id="line">📏 Line</button>
+        </div>
+        
+        <div class="size-section">
+            <button id="decrease">➖ Smaller</button>
+            <span id="sizeDisplay" class="size-value">20</span>
+            <button id="increase">➕ Larger</button>
+        </div>
+        
+        <div class="color-section">
+            <label for="colorPicker">Color:</label>
+            <input type="color" id="colorPicker" value="#000000">
+        </div>
+        
+        <div class="action-section">
+            <button id="reset">🗑️ Clear</button>
+        </div>
+    </div>
+
+    <footer>
+        <h2> Made with love by Hari ❤️</h2>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script>
+        // Add active class to selected tool
+        document.querySelectorAll('.tool-section button').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.tool-section button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
